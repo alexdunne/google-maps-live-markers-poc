@@ -1,3 +1,7 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 .fill-parent {
   height: 100%;
   width: 100%;
