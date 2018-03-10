@@ -23,10 +23,10 @@ class Dashboard extends Component {
       const markerUpdate = {
         id,
         lat: existing
-          ? existing.lat + 0.00001
+          ? existing.lat + this.getRandomInRange(0.00001, 0.001, 7)
           : this.getRandomInRange(52.4, 52.5, 6),
         lng: existing
-          ? existing.lng + 0.00001
+          ? existing.lng + this.getRandomInRange(0.00001, 0.001, 7)
           : this.getRandomInRange(-1.82, -1.95, 6)
       };
 
