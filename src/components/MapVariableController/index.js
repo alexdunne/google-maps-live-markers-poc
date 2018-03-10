@@ -6,7 +6,7 @@ const MapVariableController = ({ maxTaxiCount, onMaxTaxiCountChange }) => (
   <div className="container">
     <header className="header">Controls</header>
 
-    <label for="taxi-count">
+    <label htmlFor="taxi-count">
       Max taxi count:
       <input
         id="taxi-count"
