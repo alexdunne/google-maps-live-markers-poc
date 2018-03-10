@@ -1,19 +1,37 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Dashboard from "./screens/Dashboard";
+import Login from "./screens/Login";
+
+import AuthRoute from "./components/AuthRoute";
 
 class App extends Component {
+  state = {
+    loggedIn: false
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to me</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <div>
+          <AuthRoute
+            exact
+            path="/"
+            loggedIn={this.state.loggedIn}
+            component={Dashboard}
+          />
+          <Route
+            path="/login"
+            render={props => (
+              <Login
+                {...props}
+                onSubmit={() => this.setState({ loggedIn: true })}
+              />
+            )}
+          />
+        </div>
+      </Router>
     );
   }
 }
