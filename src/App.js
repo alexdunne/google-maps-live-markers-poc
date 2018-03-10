@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router>
         <div className="fill-parent">
-          <AuthRoute
+          <Route
             exact
             path="/"
             loggedIn={this.state.loggedIn}

@@ -1,23 +1,19 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 
-// Taken from https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/
-const GOOGLE_MAPS_API_KEY = "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo";
+import Map from "../components/Map";
 
 class Dashboard extends Component {
-  static defaultProps = {
-    center: { lat: 52.488656, lng: -1.887221 },
-    zoom: 15
+  state = {
+    markers: [
+      { id: 1, lat: 52.488656, lng: -1.887221 },
+      { id: 2, lat: 52.474615, lng: -1.887489 },
+      { id: 3, lat: 52.495865, lng: -1.887112 }
+    ]
   };
 
   render() {
-    return (
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: [GOOGLE_MAPS_API_KEY] }}
-        defaultCenter={this.props.center}
-        defaultZoom={this.props.zoom}
-      />
-    );
+    return <Map markers={this.state.markers} />;
   }
 }
 
