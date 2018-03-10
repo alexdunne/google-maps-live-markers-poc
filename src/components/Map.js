@@ -8,7 +8,7 @@ const GOOGLE_MAPS_API_KEY = "AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo";
 
 class Map extends Component {
   static defaultProps = {
-    center: { lat: 52.488656, lng: -1.887221 },
+    center: { lat: 52.4588, lng: -1.8711 },
     zoom: 13,
     markers: []
   };
